@@ -12,12 +12,6 @@
 [build.environment]
   NODE_VERSION = "24"
 
-[functions]
-  # The functions read config.json at runtime (lib/config.mjs) so the mailing
-  # address and sender details live in one file. Read with fs, so the bundler
-  # cannot trace it; included_files ships it next to the code.
-  included_files = ["config.json"]
-
 [[headers]]
   for = "/weekly/assets/*"
   [headers.values]
