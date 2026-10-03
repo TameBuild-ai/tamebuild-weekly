@@ -48,8 +48,6 @@ export default async (req) => {
     ...sub,
     status: "confirmed",
     confirmed_at: now,
-    unsubscribed_at: null,
-    resubscribe_requested: undefined,
     updated_at: now,
   });
   await store("tokens").delete(`confirm/${sha256hex(t)}`);

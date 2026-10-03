@@ -1,9 +1,8 @@
 // Shared pieces for the weekly site's functions.
 //
 // What this site holds, and what a leak of it could do:
-//   WEEKLY_LINK_SECRET            signs hold and unsubscribe links. A leak lets
-//                                 someone hold an issue or unsubscribe a reader.
-//                                 It cannot publish anything.
+//   WEEKLY_LINK_SECRET            signs hold links. A leak lets someone hold an
+//                                 issue. It cannot publish anything.
 //   SUBSCRIBER_SYNC_TOKEN_SHA256  only the hash of the engine's token, so a leak
 //                                 of this site's settings does not expose it.
 //   RESEND_SENDING_KEY            a Resend key limited to sending from
@@ -28,8 +27,7 @@ export function sha256hex(s) {
   return crypto.createHash("sha256").update(s).digest("hex");
 }
 
-// The stable, non-reversible id for a subscriber. The engine computes the same
-// value, so unsubscribe links carry this rather than the address itself.
+// The stable, non-reversible id for a signup, used as its key in the store.
 export function emailId(email) {
   return sha256hex(String(email).trim().toLowerCase()).slice(0, 40);
 }

@@ -93,8 +93,7 @@ export default async (req, context) => {
     ...(existing || {}),
     id,
     email,
-    status: existing?.status === "unsubscribed" ? "unsubscribed" : "pending",
-    resubscribe_requested: existing?.status === "unsubscribed" ? true : undefined,
+    status: "pending",
     created_at: existing?.created_at || new Date(now).toISOString(),
     last_sent_at: new Date(now).toISOString(),
   });
