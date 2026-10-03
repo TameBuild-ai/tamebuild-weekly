@@ -1,0 +1,29 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+  # Each production build costs Netlify credits, and only content and code
+  # changes should cost one. scripts/ignore-build.sh exits 0 (skip) when a
+  # commit touches nothing that affects the published site, such as this
+  # repo's README. The engine never commits holds, drafts or logs here, so in
+  # practice the only builds are new issues, editorials and code changes.
+  ignore = "bash scripts/ignore-build.sh"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[functions]
+  # The functions read config.json at runtime (lib/config.mjs) so the mailing
+  # address and sender details live in one file. Read with fs, so the bundler
+  # cannot trace it; included_files ships it next to the code.
+  included_files = ["config.json"]
+
+[[headers]]
+  for = "/weekly/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/weekly/feed.xml"
+  [headers.values]
+    Content-Type = "application/rss+xml; charset=utf-8"

@@ -1,0 +1,16 @@
+{
+  "siteUrl": "https://tamebuild.ai",
+  "netlifyUrl": "https://tamebuild-weekly.netlify.app",
+  "proxyLive": false,
+  "basePath": "/weekly",
+  "title": "Tame the Week: AI News for Small Business",
+  "shortTitle": "Tame the Week",
+  "description": "A short weekly note on AI news a small business owner can act on, checked against its sources before it goes out.",
+  "author": "Jeff Goddard",
+  "fromName": "Tame the Week",
+  "fromAddress": "news@news.tamebuild.ai",
+  "replyTo": "Jeff.Goddard@TameBuild.ai",
+  "mailingAddress": "PO Box 26, Union City, TN 38281",
+  "draftRecipient": "ehrgeek@gmail.com",
+  "timeZone": "America/Chicago"
+}
