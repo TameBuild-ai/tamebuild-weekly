@@ -1,7 +1,7 @@
 {
   "siteUrl": "https://tamebuild.ai",
   "netlifyUrl": "https://tamebuild-weekly.netlify.app",
-  "proxyLive": false,
+  "proxyLive": true,
   "basePath": "/weekly",
   "title": "Tame the Week: AI News for Small Business",
   "shortTitle": "Tame the Week",
