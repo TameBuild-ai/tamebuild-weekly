@@ -26,8 +26,14 @@ function checkEmail(email) {
   });
 }
 
+// The same mark as the site header: a brass diamond and the TAMEBUILD.AI
+// wordmark, as text so it shows even when a mail app blocks images.
+const MARK_HTML = `<p style="margin:0 0 18px;"><a href="https://tamebuild.ai/weekly/" style="font-family:'Courier New',Courier,monospace;font-size:14px;letter-spacing:.06em;color:#14110D;text-decoration:none;"><span style="color:#C9A227;">&#9670;</span> TAMEBUILD<span style="color:#C9A227;">.AI</span></a></p>`;
+
 function confirmEmail(link) {
-  const text = `Confirm your subscription to Tame the Week
+  const text = `◆ TAMEBUILD.AI  https://tamebuild.ai/weekly/
+
+Confirm your subscription to Tame the Week
 
 Press this link and then the button on the page to start getting one short email a week about AI news you can act on:
 
@@ -36,6 +42,7 @@ ${link}
 If you didn't ask for this, ignore this email and you won't hear from us again.`;
   const html = `<!DOCTYPE html><html><body style="margin:0;padding:24px;background:#F1EADA;font-family:Arial,Helvetica,sans-serif;color:#14110D;">
 <div style="max-width:520px;margin:0 auto;background:#ffffff;padding:28px;border:1px solid #d8cfba;">
+${MARK_HTML}
 <p style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#8a6d12;margin:0 0 12px;">Tame the Week</p>
 <h1 style="font-size:22px;margin:0 0 14px;">Confirm your subscription</h1>
 <p style="font-size:16px;line-height:1.5;margin:0 0 20px;">Press the button, then confirm on the page that opens, to start getting one short email a week about AI news you can act on.</p>
