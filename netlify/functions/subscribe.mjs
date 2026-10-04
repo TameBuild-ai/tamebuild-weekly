@@ -35,7 +35,7 @@ function confirmEmail(link) {
 
 Confirm your subscription to Tame the Week
 
-Press this link and then the button on the page to start getting one short email a week about AI news you can act on:
+Open the link below to confirm your subscription:
 
 ${link}
 
@@ -45,7 +45,7 @@ If you didn't ask for this, ignore this email and you won't hear from us again.`
 ${MARK_HTML}
 <p style="font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#8a6d12;margin:0 0 12px;">Tame the Week</p>
 <h1 style="font-size:22px;margin:0 0 14px;">Confirm your subscription</h1>
-<p style="font-size:16px;line-height:1.5;margin:0 0 20px;">Press the button, then confirm on the page that opens, to start getting one short email a week about AI news you can act on.</p>
+<p style="font-size:16px;line-height:1.5;margin:0 0 20px;">Press the button to confirm your subscription.</p>
 <p style="margin:0 0 24px;"><a href="${esc(link)}" style="display:inline-block;background:#C9A227;color:#14110D;padding:12px 22px;text-decoration:none;font-weight:bold;">Confirm my subscription</a></p>
 <p style="font-size:13px;line-height:1.5;color:#555;margin:0;">If you didn't ask for this, ignore this email and you won't hear from us again.</p>
 </div></body></html>`;
