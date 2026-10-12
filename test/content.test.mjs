@@ -37,5 +37,7 @@ test("Issue 1 loads with its lead headline and window", () => {
 });
 
 test("editorials folder README is not treated as an editorial", () => {
-  assert.deepEqual(loadEditorials(), []);
+  // Real editorials exist (the first was published 2026-10-03), so check the
+  // README is not among them rather than expecting an empty list.
+  assert.ok(loadEditorials().every((e) => e.slug.toLowerCase() !== "readme"));
 });
