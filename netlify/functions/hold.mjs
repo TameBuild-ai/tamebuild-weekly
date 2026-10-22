@@ -48,8 +48,8 @@ export default async (req) => {
   if (state === "expired") {
     return messagePage({
       title: "Too late to hold",
-      heading: "This issue has already gone out",
-      paragraphs: [`The hold link for the ${esc(formatDate(issue))} issue stopped working at publish time.`],
+      heading: "This hold link has expired",
+      paragraphs: [`The hold link for the ${esc(formatDate(issue))} issue stopped working at the 6 PM Central limit. By then the issue has either gone out or been stopped, and the engine has emailed Jeff which.`],
       status: 410,
     });
   }
@@ -59,12 +59,12 @@ export default async (req) => {
 
   if (req.method === "GET") {
     if (existing) {
-      return messagePage({ title: "Already held", heading: "This issue is on hold", paragraphs: [`The ${esc(formatDate(issue))} issue will not publish.`] });
+      return messagePage({ title: "Already held", heading: "This issue is on hold", paragraphs: [`The ${esc(formatDate(issue))} issue will not publish. If its page was already live, the subscriber email will not go out.`] });
     }
     return messagePage({
       title: "Hold this issue",
       heading: `Hold the ${formatDate(issue)} issue?`,
-      paragraphs: [`It publishes ${esc(when(exp))} unless you hold it. Holding stops the page and the subscriber email for this one issue.`],
+      paragraphs: [`Holding stops this one issue: its page and its subscriber email. If the page is already live, holding still stops the email. This link works until ${esc(when(exp))}.`],
       form: { action: "/weekly/hold", fields: { issue, exp, sig }, button: "Hold this issue" },
     });
   }
@@ -73,7 +73,7 @@ export default async (req) => {
   return messagePage({
     title: "Held",
     heading: "Held",
-    paragraphs: [`The ${esc(formatDate(issue))} issue will not publish. You'll get a note from the engine confirming it skipped the issue.`],
+    paragraphs: [`The ${esc(formatDate(issue))} issue will not publish. If its page was already live, the subscriber email will not go out. You'll get a note from the engine confirming what it stopped.`],
   });
 };
 
