@@ -100,6 +100,15 @@ section.weekly-latest{padding-top:40px;}
   .entry-list a{grid-template-columns:120px 1fr auto; align-items:baseline; gap:20px;}
 }
 
+/* ---------- latest editorial on the index ---------- */
+section.weekly-editorial{padding-top:0;}
+.editorial-feature{border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:20px 0;}
+.editorial-feature .li-title{margin:0 0 6px 0; font-size:24px;}
+.editorial-feature .li-title a{text-decoration:none;}
+.editorial-feature .li-title a:hover{color:var(--brass-bright);}
+.editorial-feature p{margin:0 0 12px 0; max-width:65ch;}
+.feature-links{display:flex; flex-wrap:wrap; gap:12px 24px; margin-bottom:0;}
+
 /* ---------- function-rendered message pages ---------- */
 .msg{padding:64px 0 80px;}
 .msg-title{font-size:clamp(28px,6vw,44px); max-width:20ch;}
