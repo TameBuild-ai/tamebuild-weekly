@@ -11,7 +11,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadIssues, loadEditorials, assertNoEmDash } from "./lib/content.mjs";
-import { indexPage, issuePage, editorialPage, feed, sitemap } from "./lib/templates.mjs";
+import { indexPage, issuePage, editorialPage, editorialsPage, feed, sitemap } from "./lib/templates.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.join(ROOT, "dist");
@@ -36,6 +36,7 @@ issues.forEach((issue, i) => {
   files.set(`${issue.date}/index.html`, issuePage(issue, { prev: issues[i - 1], next: issues[i + 1] }));
 });
 for (const ed of editorials) files.set(`editorial/${ed.slug}/index.html`, editorialPage(ed));
+if (editorials.length) files.set("editorial/index.html", editorialsPage(editorials));
 files.set("feed.xml", feed({ issues, editorials }));
 files.set("sitemap.xml", sitemap({ issues, editorials }));
 
