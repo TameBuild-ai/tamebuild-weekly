@@ -2,7 +2,7 @@
 title: My $100 computer, and five places AI earns its keep
 author: Jeff Goddard
 bio: Jeff Goddard builds working AI tools for small businesses from Union City, Tennessee. Before that, he spent fifteen years running clinical technology for large health systems.
-date: 2026-10-28
+date: 2026-11-04
 summary: AI isn't a magic pill, but it is a serious time saver. Here are five places it can give a small business owner hours back, starting with tools you probably already have.
 email: true
 ---
