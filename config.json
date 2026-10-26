@@ -13,6 +13,6 @@
   "mailingAddress": "PO Box 26, Union City, TN 38281",
   "draftRecipient": "jeff.goddard@tamebuild.ai",
   "alertFromName": "Tame the Week engine",
-  "alertFromAddress": "alerts@alerts.tamebuild.ai",
+  "alertFromAddress": "alerts@news.tamebuild.ai",
   "timeZone": "America/Chicago"
 }
