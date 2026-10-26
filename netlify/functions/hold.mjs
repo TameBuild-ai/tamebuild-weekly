@@ -5,7 +5,10 @@
 // issue date and the expiry (publish time), so a link works for one issue and
 // stops working once that issue would have published. Pressing the button can
 // only hold; there is no way to publish or un-hold from this site. To release
-// a held issue, Jeff tells Claude, which reruns the publish job by hand.
+// a hold, a person starts the engine's Weekly publish workflow with
+// release_hold ticked; the engine records the release and its later runs
+// ignore this hold (tamebuild-weekly-engine lib/publish-run.mjs). The hold
+// record here is never deleted, and only the first press is kept.
 //
 // GET never changes anything, because mail scanners open links on their own.
 
