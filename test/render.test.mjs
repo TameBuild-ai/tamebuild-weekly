@@ -74,3 +74,10 @@ test("/weekly/editorial/ lists every editorial, newest first", () => {
   assert.ok(positions.every((p) => p !== -1), "all listed");
   assert.deepEqual(positions, [...positions].sort((a, b) => a - b), "newest first");
 });
+
+test("the /weekly/ intro does not promise two or three items: busy weeks run up to five (Jeff, 2026-11-02)", () => {
+  const html = indexPage({ issues: loadIssues(), editorials: loadEditorials() });
+  const lede = html.match(/<p class="lede">([^<]*)<\/p>/)[1];
+  assert.doesNotMatch(lede, /two or three/i);
+  assert.match(lede, /^A few things that happened in AI each week/);
+});
