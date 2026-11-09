@@ -83,6 +83,12 @@ section.weekly-latest{padding-top:40px;}
 .issue-body li{margin:0 0 8px 0;}
 .issue-body blockquote{margin:0 0 16px 0; padding-left:16px; border-left:2px solid var(--brass); color:var(--cream);}
 
+/* Update note on an editorial: 1px border, a label and a smaller size keep it
+   apart from the quote block above (2px border, cream text). */
+.issue-body .update-note{margin:0 0 40px 0; padding-left:16px; border-left:1px solid var(--brass);}
+.issue-body .update-note .eyebrow{margin:0 0 8px 0;}
+.issue-body .update-note p{font-size:15px; line-height:1.6; color:var(--cream-dim); margin:0;}
+
 .byline-box{border-top:1px solid var(--line-strong); margin-top:36px; padding-top:18px; font-size:15px; color:var(--cream-dim);}
 .byline-box p{margin:0 0 6px 0;}
 .byline-name{font-family:var(--font-mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--brass);}

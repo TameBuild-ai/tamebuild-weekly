@@ -20,6 +20,14 @@ The editorial, in plain Markdown. Paragraphs, **bold**, *italics*,
 [links](https://example.com) and lists all work.
 ```
 
+To add an update note, make it its own paragraph, starting with the label in
+capitals and a colon. The site shows it as a separate labelled note, and in
+an email it stays a plain paragraph:
+
+```markdown
+UPDATE · NOVEMBER 8, 2026: What changed since this piece ran.
+```
+
 Rules the build enforces:
 
 - `title`, `author`, `bio`, `date` (YYYY-MM-DD) and `summary` are required.

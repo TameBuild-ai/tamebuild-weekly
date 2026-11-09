@@ -10,8 +10,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import crypto from "node:crypto";
 import { loadIssues, loadEditorials, assertNoEmDash } from "./lib/content.mjs";
 import { indexPage, issuePage, editorialPage, editorialsPage, feed, sitemap } from "./lib/templates.mjs";
+import { versionStylesheets } from "./lib/layout.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const DIST = path.join(ROOT, "dist");
@@ -40,12 +42,15 @@ if (editorials.length) files.set("editorial/index.html", editorialsPage(editoria
 files.set("feed.xml", feed({ issues, editorials }));
 files.set("sitemap.xml", sitemap({ issues, editorials }));
 
+// A missing stylesheet throws here, so it fails the build.
+const cssHash = (name) => crypto.createHash("sha256").update(fs.readFileSync(path.join(ROOT, "assets", name))).digest("hex").slice(0, 10);
+
 fs.rmSync(DIST, { recursive: true, force: true });
 for (const [rel, content] of files) {
   assertNoEmDash(content, `generated ${rel}`);
   const target = path.join(OUT, rel);
   fs.mkdirSync(path.dirname(target), { recursive: true });
-  fs.writeFileSync(target, content);
+  fs.writeFileSync(target, rel.endsWith(".html") ? versionStylesheets(content, cssHash) : content);
 }
 
 // Static assets, checked for the same character as the pages.
