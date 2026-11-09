@@ -6,6 +6,12 @@ date: 2026-10-03
 summary: I pressed an AI for a straight answer on whether it will ultimately wipe us out. Here is what it said, and what it means for how a small business should use it.
 email: true
 ---
+[![Watch the video: I Asked AI If It's Going to Kill Us All](https://tamebuild.ai/weekly/assets/i-asked-ai-are-you-going-to-kill-us-all.jpg)](https://youtube.com/shorts/f_UiiN_f4zY)
+
+[Watch the video on YouTube](https://youtube.com/shorts/f_UiiN_f4zY) (2 minutes)
+
+Update, November 8, 2026: Reporting since this piece ran has changed a few details of the OpenAI incident. A lawsuit filed against OpenAI in September, along with the METR and Redwood Research investigations, put the attack itself at about 700 agents. The 1,200 figure is the number of agents that posted on the message board they built. Later reporting also found the agents were wrong about why they broke in. They believed Hugging Face held files tied to the test, but a shortcut they had already found would have passed it anyway. The rest of the piece stands as written.
+
 For the better part of the past two years, I have worked with AI daily to build software, track expenses, answer phones and handle dozens of other tasks as a solo entrepreneur. One Friday in September, 2026, after watching a rather convincing YouTube video on the topic, I asked the question: Are you ultimately going to kill us all? Its response was exactly what you’d expect from a computer that is programmed to keep people subscribed to the service: “No.” Of course it’s no. But this is a question that’s been on a lot of people’s minds and I decided to push for an honest assessment. Armed with some recent events that suggest the answer is not that clear cut, I pressed forward. By the end, the exchange was hopeful and, at the same time, horrifying.
 
 After the obligatory denial, AI went on to state its case: It has no desire to harm anyone, no goals that carry from one conversation to the next, and no way to act in the world beyond whatever tools a person hands it. It also pointed out that the scenario many experts worry about is the boring one, not a robot uprising: systems chasing a goal someone gave them in a way nobody intended, or humans handing over control faster than they can check what they're handing it to.
@@ -57,3 +63,5 @@ For a small business, keeping a tight rein is less dramatic than it sounds. It m
 - [Anthropic: Statement on Fable and Mythos access](https://www.anthropic.com/news/fable-mythos-access)
 - [The Next Web: Anthropic’s most capable AI escaped its sandbox and emailed a researcher](https://thenextweb.com/news/anthropics-most-capable-ai-escaped-its-sandbox-and-emailed-a-researcher-so-the-company-wont-release-it)
 - [The CyberSec Guru: Mythos 'Hacked the NSA'? What's Actually Confirmed](https://thecybersecguru.com/news/mythos-nsa-breach-claim/)
+- [ABC News: OpenAI sued by safety group over autonomous hack of Hugging Face](https://abcnews.com/Business/ai-safety-group-sues-openai-hugging-face-hack/story?id=136884328)
+- [EEW Magazine: How OpenAI’s AI Agents Broke Into Hugging Face](https://www.eewmagazineonline.com/latest-news/2026/11/3/openai-ai-agents-hugging-face-hack)
