@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { loadIssues, loadEditorials, renderUpdateNotes } from "../lib/content.mjs";
+import { versionStylesheets } from "../lib/layout.mjs";
 import { externalLinksNewTab, indexPage, issuePage, editorialPage, editorialsPage, feed } from "../lib/templates.mjs";
 
 const NEW_TAB = ' target="_blank" rel="noopener noreferrer"';
@@ -97,4 +98,15 @@ test("the kill-us-all editorial carries its update note without the old prefix",
   const ed = loadEditorials().find((e) => e.slug === "i-asked-ai-are-you-going-to-kill-us-all");
   assert.ok(ed.html.includes('<div class="eyebrow">UPDATE &middot; NOVEMBER 8, 2026</div><p>Reporting since this piece ran'));
   assert.ok(!ed.html.includes("Update, November 8, 2026"));
+});
+
+test("stylesheet links carry a version that changes when the CSS changes", () => {
+  const html = '<link rel="stylesheet" href="/weekly/assets/style.css">\n<link rel="stylesheet" href="/weekly/assets/weekly.css">\n<a href="/weekly/assets/postcard-rule.jpg">image</a>';
+  const hashes = { "style.css": "aaaa", "weekly.css": "bbbb" };
+  const out = versionStylesheets(html, (name) => hashes[name]);
+  assert.ok(out.includes('href="/weekly/assets/style.css?v=aaaa"'));
+  assert.ok(out.includes('href="/weekly/assets/weekly.css?v=bbbb"'));
+  assert.ok(out.includes('href="/weekly/assets/postcard-rule.jpg"'), "only stylesheets are versioned");
+  hashes["weekly.css"] = "cccc";
+  assert.ok(versionStylesheets(html, (name) => hashes[name]).includes('weekly.css?v=cccc'));
 });
